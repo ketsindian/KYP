@@ -33,7 +33,7 @@ jobs:
           key: KYPRepo-{{ checksum "pom.xml" }}
         
       # package into a jar
-      - run: mvn clean package -DSkipTests=true
+      - run: mvn clean package -DskipTests=true
 
       # build and push docker image to docker hub
       - run: mvn clean compile jib:build -Dimage=zarinlo/springboot-api:$CIRCLE_BUILD_NUM
